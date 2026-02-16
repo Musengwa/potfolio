@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTheme } from './ThemeProvider';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +38,7 @@ export function Header() {
     <>
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
+          isScrolled ? 'bg-card/95 backdrop-blur-sm shadow-md dark:bg-card/95' : 'bg-transparent'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -71,25 +73,42 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA Button - Desktop */}
-            <Button 
-              className="hidden md:flex bg-primary hover:bg-primary/90"
-              onClick={() => scrollToSection('#contact')}
-            >
-              Let's Talk
-            </Button>
+            {/* Right Side Actions */}
+            <div className="flex items-center gap-2">
+              {/* Theme Toggle Button */}
+              <button
+                className="p-2 hover:bg-secondary rounded-lg transition-colors"
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="size-5" />
+                ) : (
+                  <Moon className="size-5" />
+                )}
+              </button>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="size-6" />
-              ) : (
-                <Menu className="size-6" />
-              )}
-            </button>
+              {/* CTA Button - Desktop */}
+              <Button 
+                className="hidden md:flex bg-primary hover:bg-primary/90"
+                onClick={() => scrollToSection('#contact')}
+              >
+                Let's Talk
+              </Button>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden p-2"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="size-6" />
+                ) : (
+                  <Menu className="size-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -101,7 +120,7 @@ export function Header() {
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
-          <div className="absolute top-20 left-0 right-0 bg-white shadow-lg">
+          <div className="absolute top-20 left-0 right-0 bg-card shadow-lg">
             <nav className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
                 <a

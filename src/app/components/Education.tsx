@@ -1,5 +1,6 @@
 import { Card } from './ui/card';
-import { GraduationCap, Calendar } from 'lucide-react';
+import { GraduationCap, Calendar, BookOpen } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export function Education() {
   const education = [
@@ -10,7 +11,7 @@ export function Education() {
       period: "2022 – 2025",
       type: "Undergraduate",
       description: "Comprehensive study of computer science fundamentals including programming, algorithms, data structures, system architecture, and software engineering principles.",
-      icon: "🎓"
+      icon: GraduationCap
     },
     {
       degree: "Senior Secondary Certificate",
@@ -19,7 +20,7 @@ export function Education() {
       period: "Completed",
       type: "Secondary Education",
       description: "Strong foundation in sciences and mathematics, laying the groundwork for advanced computer science studies.",
-      icon: "📚"
+      icon: BookOpen
     }
   ];
 
@@ -28,7 +29,13 @@ export function Education() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <span className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary mb-4">
               Education
             </span>
@@ -38,7 +45,7 @@ export function Education() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Building a strong foundation through quality education and continuous learning
             </p>
-          </div>
+          </motion.div>
 
           {/* Education Timeline */}
           <div className="relative">
@@ -47,17 +54,24 @@ export function Education() {
 
             <div className="space-y-12">
               {education.map((edu, index) => (
-                <div key={index} className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+                <motion.div 
+                  key={index} 
+                  className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
                   {/* Timeline Dot */}
                   <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                     <div className="w-4 h-4 bg-primary rounded-full ring-4 ring-background"></div>
                   </div>
 
                   {/* Content Card */}
-                  <Card className={`p-8 bg-white border-border hover:shadow-xl transition-all ${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
+                  <Card className={`p-8 bg-card border-border hover:shadow-xl transition-all ${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="bg-primary/10 p-4 rounded-xl text-4xl">
-                        {edu.icon}
+                      <div className="bg-primary/10 p-4 rounded-xl">
+                        <edu.icon className="size-8 text-primary" />
                       </div>
                       <div className="flex-1">
                         <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs mb-2">
@@ -82,14 +96,20 @@ export function Education() {
 
                   {/* Empty Space for alternating layout */}
                   <div className={`hidden md:block ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1'}`}></div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Additional Learning */}
-          <div className="mt-16 text-center">
-            <Card className="p-8 bg-white border-border max-w-3xl mx-auto">
+          <motion.div 
+            className="mt-16 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Card className="p-8 bg-card border-border max-w-3xl mx-auto">
               <h3 className="text-2xl mb-4">Continuous Learning</h3>
               <p className="text-muted-foreground mb-6">
                 Beyond formal education, I actively pursue knowledge through online courses, technical documentation, 
@@ -103,7 +123,7 @@ export function Education() {
                 <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">Practical Projects</span>
               </div>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
