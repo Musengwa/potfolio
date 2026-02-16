@@ -1,6 +1,7 @@
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { ExternalLink, Github } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export function Projects() {
   const projects = [
@@ -35,11 +36,17 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <span className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary mb-4">
               Portfolio
             </span>
@@ -49,64 +56,78 @@ export function Projects() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A selection of projects showcasing my technical skills and problem-solving abilities
             </p>
-          </div>
+          </motion.div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden border-border hover:shadow-xl transition-all group">
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex} 
-                        className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs"
-                      >
-                        {tag}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="overflow-hidden border-border hover:shadow-xl transition-all group">
+                  {/* Project Image */}
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm text-foreground">
+                        {project.category}
                       </span>
-                    ))}
+                    </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Github className="mr-2 size-4" />
-                      Code
-                    </Button>
-                    <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">
-                      <ExternalLink className="mr-2 size-4" />
-                      Demo
-                    </Button>
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <h3 className="text-2xl mb-3">{project.title}</h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span 
+                          key={tagIndex} 
+                          className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-3">
+                      <Button variant="outline" size="sm" className="flex-1">
+                        <Github className="mr-2 size-4" />
+                        Code
+                      </Button>
+                      <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">
+                        <ExternalLink className="mr-2 size-4" />
+                        Demo
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-12">
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <p className="text-muted-foreground mb-4">Want to see more of my work?</p>
             <Button size="lg" variant="outline" asChild>
               <a href="https://github.com/Musengwa" target="_blank" rel="noopener noreferrer">
@@ -114,7 +135,7 @@ export function Projects() {
                 Visit My GitHub
               </a>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

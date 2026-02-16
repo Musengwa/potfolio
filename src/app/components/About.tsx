@@ -1,5 +1,6 @@
 import { Card } from './ui/card';
 import { Code2, Lightbulb, Users, Zap } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export function About() {
   const highlights = [
@@ -26,11 +27,17 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <span className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary mb-4">
               About Me
             </span>
@@ -41,11 +48,17 @@ export function About() {
               A passionate developer with a strong foundation in computer science and hands-on experience 
               in modern web and mobile development technologies.
             </p>
-          </div>
+          </motion.div>
 
           {/* Profile Content */}
           <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
-            <div className="space-y-6">
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <p className="text-lg leading-relaxed">
                 As a Computer Science graduand from the University of Zambia, I've developed a comprehensive 
                 skill set spanning full-stack web development, mobile applications, and system design. 
@@ -71,26 +84,40 @@ export function About() {
                   <div className="text-muted-foreground">Technologies</div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
+            </motion.div>
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <img 
                 src="https://images.unsplash.com/photo-1588504225021-7f3c3273896d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2RpbmclMjBzZXR1cCUyMG1pbmltYWx8ZW58MXx8fHwxNzcxMTUwOTk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="Coding setup"
                 className="rounded-2xl shadow-xl"
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Highlights Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((highlight, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow border-border">
-                <div className="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <highlight.icon className="size-6 text-primary" />
-                </div>
-                <h3 className="text-lg mb-2">{highlight.title}</h3>
-                <p className="text-muted-foreground text-sm">{highlight.description}</p>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="p-6 hover:shadow-lg transition-shadow border-border">
+                  <div className="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                    <highlight.icon className="size-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg mb-2">{highlight.title}</h3>
+                  <p className="text-muted-foreground text-sm">{highlight.description}</p>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
