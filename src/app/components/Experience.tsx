@@ -59,7 +59,7 @@ export function Experience() {
                     {/* Image Section */}
                     <div className="md:col-span-1 h-64 md:h-auto">
                       <img 
-                        src={exp.image}
+                        src="/images/Pics/znsf.jpg"
                         alt={exp.company}
                         className="w-full h-full object-cover"
                       />

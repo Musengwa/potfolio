@@ -93,7 +93,7 @@ export function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1588504225021-7f3c3273896d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2RpbmclMjBzZXR1cCUyMG1pbmltYWx8ZW58MXx8fHwxNzcxMTUwOTk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="/images/Pics/laptop.jpg"
                 alt="Coding setup"
                 className="rounded-2xl shadow-xl"
               />
