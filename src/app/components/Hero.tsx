@@ -106,7 +106,7 @@ export function Hero() {
           >
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-card dark:border-card">
               <img 
-                src="/images/Pics/heroPic.jpg"
+                src="/images/Pics/intro.jpg"
                 alt="Professional workspace"
                 className="w-full h-full object-cover"
               />
