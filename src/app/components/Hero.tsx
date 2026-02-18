@@ -106,7 +106,7 @@ export function Hero() {
           >
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-card dark:border-card">
               <img 
-                src="https://images.unsplash.com/photo-1622295023825-6e319464b810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBhZnJpY2FuJTIwZGV2ZWxvcGVyJTIwd29ya3NwYWNlfGVufDF8fHx8MTc3MTE1MDk5M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="/images/Pics/intro.jpg"
                 alt="Professional workspace"
                 className="w-full h-full object-cover"
               />

@@ -59,7 +59,7 @@ export function Contact() {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-6">
-              <Card className="p-8 bg-white border-border">
+              <Card className="p-8 bg-card dark:bg-card border-border">
                 <h3 className="text-2xl mb-6">Contact Information</h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
@@ -118,7 +118,7 @@ export function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <Card className="p-8 bg-white border-border">
+              <Card className="p-8 bg-card dark:bg-card border-border">
                 <h3 className="text-2xl mb-6">Send a Message</h3>
                 <form className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -129,7 +129,7 @@ export function Contact() {
                       <input
                         type="text"
                         id="name"
-                        className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-3 bg-input rounded-lg border border-border text-foreground placeholder-muted-foreground dark:bg-input dark:border-border focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Your name"
                       />
                     </div>
@@ -140,7 +140,7 @@ export function Contact() {
                       <input
                         type="email"
                         id="email"
-                        className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-3 bg-input rounded-lg border border-border text-foreground placeholder-muted-foreground dark:bg-input dark:border-border focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -153,7 +153,7 @@ export function Contact() {
                     <input
                       type="text"
                       id="subject"
-                      className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full px-4 py-3 bg-input rounded-lg border border-border text-foreground placeholder-muted-foreground dark:bg-input dark:border-border focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="How can I help you?"
                     />
                   </div>
@@ -165,7 +165,7 @@ export function Contact() {
                     <textarea
                       id="message"
                       rows={6}
-                      className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                      className="w-full px-4 py-3 bg-input rounded-lg border border-border text-foreground placeholder-muted-foreground dark:bg-input dark:border-border focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
