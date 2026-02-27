@@ -85,18 +85,74 @@ export function About() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Right Content - Four Overlapping Circular Images */}
             <motion.div 
-              className="relative"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="relative aspect-square w-full max-w-md mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.4 }}
             >
-              <img 
-                src="/images/Pics/laptop.jpg"
-                alt="Coding setup"
-                className="rounded-2xl shadow-xl"
-              />
+              {/* Image 1 - Largest, bottom left */}
+              <motion.div 
+                className="absolute w-2/3 h-2/3 bottom-0 left-0 z-10 rounded-full overflow-hidden shadow-xl border-4 border-card dark:border-card"
+                initial={{ opacity: 0, x: -40, y: 40 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
+                <img 
+                  src="/images/Pics/heroIntro.jpg"
+                  alt="Professional workspace"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              {/* Image 2 - Medium, top right */}
+              <motion.div 
+                className="absolute w-1/2 h-1/2 top-0 right-0 z-20 rounded-full overflow-hidden shadow-xl border-4 border-card dark:border-card"
+                initial={{ opacity: 0, x: 40, y: -40 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                <img 
+                  src="/images/Pics/laptop.jpg"
+                  alt="Coding setup"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              {/* Image 3 - Small, centered */}
+              <motion.div 
+                className="absolute w-1/3 h-1/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 rounded-full overflow-hidden shadow-xl border-4 border-card dark:border-card"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, type: "spring", stiffness: 200, damping: 20 }}
+              >
+                <img 
+                  src="/images/Pics/ai.PNG"
+                  alt="Detail shot"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              {/* Image 4 - Extra small, bottom right */}
+              <motion.div 
+                className="absolute w-1/4 h-1/4 bottom-[15%] right-[15%] z-40 rounded-full overflow-hidden shadow-xl border-4 border-card dark:border-card rotate-12"
+                initial={{ opacity: 0, rotate: -15, scale: 0.6 }}
+                whileInView={{ opacity: 1, rotate: 12, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+              >
+                <img 
+                  src="/images/Pics/unza.png"
+                  alt="Profile detail"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
             </motion.div>
           </div>
 

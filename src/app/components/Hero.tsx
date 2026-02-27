@@ -97,32 +97,67 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Image */}
+          {/* Right Content - Overlapping Images */}
           <motion.div 
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative aspect-square"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
           >
-            <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-card dark:border-card">
+            {/* Image 1 - Largest, bottom left */}
+            <motion.div 
+              className="absolute w-3/4 h-3/4 bottom-0 left-0 z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
+              initial={{ opacity: 0, x: -50, y: 50 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
               <img 
-                src="/images/Pics/intro.jpg"
+                src="/images/Pics/work.jpg"
                 alt="Professional workspace"
                 className="w-full h-full object-cover"
               />
-            </div>
+            </motion.div>
+
+            {/* Image 2 - Medium, top right */}
+            <motion.div 
+              className="absolute w-1/2 h-1/2 top-0 right-0 z-20 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
+              initial={{ opacity: 0, x: 50, y: -50 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
+              <img 
+                src="/images/Pics/intro2.jpg"  // Replace with actual image
+                alt="Coding setup"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Image 3 - Small, center */}
+            <motion.div 
+              className="absolute w-1/3 h-1/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.7, type: "spring", stiffness: 200, damping: 20 }}
+            >
+              <img 
+                src="/images/Pics/intro3.jpg"  // Replace with actual image
+                alt="Detail shot"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
             {/* Decorative Elements */}
             <motion.div 
               className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary rounded-3xl -z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, type: "spring" }}
+              transition={{ delay: 0.9, type: "spring" }}
             ></motion.div>
             <motion.div 
               className="absolute -top-6 -left-6 w-24 h-24 bg-secondary rounded-3xl -z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.9, type: "spring" }}
+              transition={{ delay: 1.0, type: "spring" }}
             ></motion.div>
           </motion.div>
         </div>

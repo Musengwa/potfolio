@@ -11,7 +11,7 @@ export function Footer() {
     },
     {
       icon: Linkedin,
-      href: "#",
+      href: "https://www.linkedin.com/in/musengwa-himoonga",
       label: "LinkedIn"
     },
     {
