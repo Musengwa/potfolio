@@ -18,7 +18,7 @@ export function Skills() {
     {
       title: "Databases",
       icon: Database,
-      skills: ["SQLite", "MySQL", "Supabase"]
+      skills: ["SQLite", "MySQL", "PostgreSQL", "Supabase"]
     },
     {
       title: "Tools & Technologies",
@@ -116,7 +116,7 @@ export function Skills() {
                     <Award className="size-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="mb-1">IT Essentials</h4>
+                    <h4 className="mb-1">CNA: IT Essentials</h4>
                     <p className="text-sm text-muted-foreground">Cisco Networking Academy</p>
                     <p className="text-xs text-muted-foreground mt-1">2023</p>
                   </div>
