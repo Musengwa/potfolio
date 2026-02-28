@@ -14,8 +14,8 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "e-commerce",
-    title: "E-Commerce Platform",
+    id: "Odini mobile app",
+    title: "travel Platform",
     description:
       "Full-stack e-commerce solution built with React and Node.js, featuring user authentication, product management, and payment integration.",
     image:
