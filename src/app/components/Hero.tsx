@@ -106,7 +106,7 @@ export function Hero() {
           >
             {/* Image 1 - Largest, bottom left */}
             <motion.div 
-              className="absolute w-3/4 h-3/4 bottom-0 left-0 z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
+              className="absolute w-3/4 h-3/4 bottom-20 left-0 z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
               initial={{ opacity: 0, x: -50, y: 50 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -117,6 +117,7 @@ export function Hero() {
                 className="w-full h-full object-cover"
               />
             </motion.div>
+
 
             {/* Image 3 - Small, center */}
             <motion.div 
