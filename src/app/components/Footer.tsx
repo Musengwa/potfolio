@@ -37,8 +37,8 @@ export function Footer() {
       
       {/* Brand Section */}
       <div>
-        <h3 className="text-2xl mb-4 ">Musengwa Himoonga</h3>
-        <p className="text-gray-700 mb-4">
+        <h3 className="text-2xl mb-4 text-gray-600">Musengwa Himoonga</h3>
+        <p className="text-gray-600 mb-4">
           Computer Science Graduate | Full-Stack Developer
         </p>
         <p className="text-gray-700 text-sm">
@@ -48,7 +48,7 @@ export function Footer() {
 
       {/* Quick Links */}
       <div>
-        <h4 className="mb-4 text-white">Quick Links</h4>
+        <h4 className="mb-4 text-gray-600">Quick Links</h4>
         <div className="grid grid-cols-2 gap-2">
           {quickLinks.map((link) => (
             <a
@@ -71,7 +71,7 @@ export function Footer() {
 
       {/* Social Links */}
       <div>
-        <h4 className="mb-4 text-white">Connect With Me</h4>
+        <h4 className="mb-4 text-gray-600">Connect With Me</h4>
         <div className="flex gap-3 mb-4">
           {socialLinks.map((social) => (
             <a
