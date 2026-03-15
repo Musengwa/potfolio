@@ -106,7 +106,7 @@ export function Hero() {
           >
             {/* Image 1 - Largest, bottom left */}
             <motion.div 
-              className="absolute w-3/4 h-3/4 bottom-0 left-0 z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
+              className="absolute w-3/4 h-3/4 bottom-20 left-0 z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
               initial={{ opacity: 0, x: -50, y: 50 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -118,29 +118,16 @@ export function Hero() {
               />
             </motion.div>
 
-            {/* Image 2 - Medium, top right */}
-            <motion.div 
-              className="absolute w-1/2 h-1/2 top-0 right-0 z-20 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
-              initial={{ opacity: 0, x: 50, y: -50 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-            >
-              <img 
-                src="/images/Pics/intro2.jpg"  // Replace with actual image
-                alt="Coding setup"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
 
             {/* Image 3 - Small, center */}
             <motion.div 
-              className="absolute w-1/3 h-1/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
+              className="absolute w-1/3 h-1/3 top-4/5 left-4/5 transform -translate-x-1/2 -translate-y-1/2 z-30 rounded-2xl overflow-hidden shadow-xl border-4 border-card dark:border-card"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7, type: "spring", stiffness: 200, damping: 20 }}
             >
               <img 
-                src="/images/Pics/intro3.jpg"  // Replace with actual image
+                src="/images/Pics/me.png"  // Replace with actual image
                 alt="Detail shot"
                 className="w-full h-full object-cover"
               />
